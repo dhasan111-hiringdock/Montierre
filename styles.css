@@ -18,6 +18,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .page {
   position: relative;
   min-height: 100vh;
@@ -1618,6 +1624,36 @@ body.lightbox-open {
   gap: 1rem;
 }
 
+.checkout-summary.is-confirmed .checkout-summary-header,
+.checkout-summary.is-confirmed .checkout-items,
+.checkout-summary.is-confirmed .checkout-coupon,
+.checkout-summary.is-confirmed .checkout-totals {
+  display: none;
+}
+
+.checkout-summary-confirmation {
+  display: none;
+}
+
+.checkout-summary.is-confirmed .checkout-summary-confirmation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.checkout-summary-confirmation h3 {
+  font-family: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.checkout-summary-confirmation-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
 .checkout-summary-header h3 {
   font-family: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
   font-size: 1.1rem;
@@ -1862,6 +1898,23 @@ body.lightbox-open {
     grid-template-columns: minmax(0, 1.3fr);
   }
 
+  .fragrance-visual,
+  .fragrance-list.condensed .fragrance-visual {
+    height: auto;
+  }
+
+  .fragrance-gallery {
+    height: auto;
+  }
+
+  .fragrance-main {
+    height: auto;
+  }
+
+  .store-gallery-main {
+    height: auto;
+  }
+
   .notes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1934,6 +1987,23 @@ body.lightbox-open {
 
   .notes {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fragrance-visual,
+  .fragrance-list.condensed .fragrance-visual {
+    height: auto;
+  }
+
+  .fragrance-gallery {
+    height: auto;
+  }
+
+  .fragrance-main {
+    height: auto;
+  }
+
+  .store-gallery-main {
+    height: auto;
   }
 
   .hero-bottle {

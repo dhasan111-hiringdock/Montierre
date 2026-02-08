@@ -44,6 +44,7 @@ const checkoutReturn = document.querySelector("[data-checkout-return]");
 const checkoutReview = document.querySelector("[data-checkout-review]");
 const checkoutReviewBack = document.querySelector("[data-checkout-review-back]");
 const checkoutReviewContinue = document.querySelector("[data-checkout-review-continue]");
+const checkoutSummary = document.querySelector(".checkout-summary");
 const storeRoot = document.querySelector("[data-store-root]");
 const CART_STORAGE_KEY = "montierre-cart";
 const SHIPPING_FEE = 100;
@@ -801,6 +802,42 @@ function completeCheckout() {
   if (!checkoutForm || !checkoutThankyou) return;
   checkoutForm.style.display = "none";
   checkoutThankyou.classList.add("is-visible");
+  const now = new Date();
+  const formatter = new Intl.DateTimeFormat("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZone: "Asia/Kolkata",
+    timeZoneName: "short"
+  });
+  const formattedDate = formatter.format(now);
+  if (checkoutSummary) {
+    checkoutSummary.classList.add("is-confirmed");
+    let confirmation = checkoutSummary.querySelector(".checkout-summary-confirmation");
+    if (!confirmation) {
+      confirmation = document.createElement("div");
+      confirmation.className = "checkout-summary-confirmation";
+      const heading = document.createElement("h3");
+      heading.textContent = "Order details";
+      const row = document.createElement("div");
+      row.className = "checkout-summary-confirmation-row";
+      const label = document.createElement("span");
+      label.textContent = "Order confirmation date";
+      const value = document.createElement("span");
+      value.className = "checkout-summary-confirmation-date";
+      row.appendChild(label);
+      row.appendChild(value);
+      confirmation.appendChild(heading);
+      confirmation.appendChild(row);
+      checkoutSummary.appendChild(confirmation);
+    }
+    const dateNode = checkoutSummary.querySelector(".checkout-summary-confirmation-date");
+    if (dateNode) {
+      dateNode.textContent = formattedDate;
+    }
+  }
   cartItemsState = [];
   appliedCouponCode = "";
   renderCart();
@@ -952,6 +989,13 @@ if (checkoutReturn && checkoutSection) {
       checkoutForm.reset();
       checkoutForm.style.display = "";
       checkoutThankyou.classList.remove("is-visible");
+    }
+    if (checkoutSummary) {
+      checkoutSummary.classList.remove("is-confirmed");
+      const confirmation = checkoutSummary.querySelector(".checkout-summary-confirmation");
+      if (confirmation) {
+        confirmation.remove();
+      }
     }
     const collections = document.getElementById("collections");
     const target = collections || checkoutSection;
