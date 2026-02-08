@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montierre — Online Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="logo">Montierre</div>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#house">House</a>
+        <a href="index.html#collections">Collections</a>
+        <a href="index.html#cour-royale">Cour Royale</a>
+        <a href="index.html#noir-silhouette">Noir Silhouette</a>
+        <a href="index.html#eternal-veil">Eternal Veil</a>
+        <span class="nav-buy">Buy Now</span>
+      </nav>
+      <button class="cart-toggle" type="button">
+        <span class="cart-toggle-label">Bag</span>
+        <span class="cart-toggle-count" data-cart-count>0</span>
+      </button>
+    </header>
+
+    <main>
+      <section id="store" class="section store">
+        <div class="section-inner">
+          <div class="section-label">Montierre Atelier</div>
+          <h2>Online Boutique</h2>
+          <p class="store-intro">
+            A dedicated Montierre store, apart from the main portfolio. Browse each fragrance,
+            review pricing, and add to your bag in a calm, minimal setting.
+          </p>
+          <div class="store-collections" data-store-root></div>
+        </div>
+      </section>
+
+      <section id="checkout" class="section checkout">
+        <div class="section-inner">
+          <div class="section-label">Checkout</div>
+          <h2>Private Order</h2>
+          <div class="checkout-grid">
+            <div class="checkout-main">
+              <form class="checkout-form" data-checkout-form>
+                <div class="checkout-columns">
+                  <div class="checkout-column">
+                    <h3>Details</h3>
+                    <div class="checkout-field">
+                      <label for="checkout-name">Full name</label>
+                      <input id="checkout-name" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="checkout-field">
+                      <label for="checkout-email">Email</label>
+                      <input id="checkout-email" name="email" type="email" autocomplete="email" required>
+                    </div>
+                  </div>
+                  <div class="checkout-column">
+                    <h3>Delivery</h3>
+                    <div class="checkout-field">
+                      <label for="checkout-address">Address</label>
+                      <input id="checkout-address" name="address" autocomplete="street-address" required>
+                    </div>
+                    <div class="checkout-field">
+                      <label for="checkout-city">City</label>
+                      <input id="checkout-city" name="city" autocomplete="address-level2" required>
+                    </div>
+                    <div class="checkout-field">
+                      <label for="checkout-country">Country/Region</label>
+                      <input id="checkout-country" name="country" autocomplete="country-name" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkout-fieldset">
+                  <legend>Shipping method</legend>
+                  <div class="checkout-options">
+                    <label class="checkout-option">
+                      <input type="radio" name="shipping" value="standard" checked>
+                      <span class="checkout-option-main">
+                        <span>Standard courier</span>
+                        <span>Complimentary for Montierre orders</span>
+                      </span>
+                    </label>
+                    <label class="checkout-option">
+                      <input type="radio" name="shipping" value="express">
+                      <span class="checkout-option-main">
+                        <span>Express dispatch</span>
+                        <span>Prioritised preparation and sending</span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <button class="checkout-submit" type="submit">Place Order</button>
+              </form>
+              <div class="checkout-thankyou" data-checkout-thankyou>
+                <div class="checkout-thankyou-inner">
+                  <div class="section-label">Montierre Atelier</div>
+                  <h3>Order Confirmed</h3>
+                  <p>
+                    Your fragrances have been recorded as part of a private Montierre order.
+                    A confirmation has been sent to the address provided, and your selection
+                    will be prepared with the same care as it was composed.
+                  </p>
+                  <button class="checkout-return" type="button" data-checkout-return>Return to Collections</button>
+                </div>
+              </div>
+            </div>
+            <aside class="checkout-summary">
+              <div class="checkout-summary-header">
+                <div class="section-label">Order</div>
+                <h3>Your Selection</h3>
+              </div>
+              <div class="checkout-items" data-checkout-items></div>
+              <div class="checkout-totals">
+                <div class="checkout-totals-row">
+                  <span>Order Total</span>
+                  <span class="checkout-total-amount" data-checkout-total>$0</span>
+                </div>
+                <p class="checkout-note">
+                  All pricing is presented in USD. Final tax and duty treatment depends
+                  on destination and will be confirmed separately.
+                </p>
+              </div>
+            </aside>
+          </div>
+          <div class="checkout-review-overlay" aria-hidden="true" data-checkout-review>
+            <div class="checkout-review-panel">
+              <div class="section-label">Review</div>
+              <h3>Confirm Your Order</h3>
+              <p>
+                Review your private order and confirm that everything is correct before
+                proceeding to payment.
+              </p>
+              <div class="checkout-review-actions">
+                <button class="checkout-review-secondary" type="button" data-checkout-review-back>
+                  Back
+                </button>
+                <button class="checkout-review-primary" type="button" data-checkout-review-continue>
+                  Proceed to Payment
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="cart-overlay" aria-hidden="true">
+      <div class="cart-backdrop" data-cart-close></div>
+      <div class="cart-ambient-quote">
+        <div class="cart-ambient-label">House of Montierre</div>
+        <p>
+          Fragrance is light you can wear. Each bottle is a room you carry with you,
+          a quiet atmosphere that follows wherever you go.
+        </p>
+      </div>
+      <section class="cart-panel" aria-label="Shopping bag" data-cart-shell>
+        <header class="cart-header">
+          <div class="cart-header-label">Montierre Atelier</div>
+          <h2>Fragrance Bag</h2>
+          <button class="cart-close" type="button" data-cart-close>Close</button>
+        </header>
+        <div class="cart-body cart-body-cart is-active" data-cart-stage="cart">
+          <div class="cart-items" data-cart-items></div>
+          <div class="cart-summary">
+            <div class="cart-summary-row">
+              <span>Subtotal</span>
+              <span class="cart-subtotal-amount" data-cart-subtotal>$0</span>
+            </div>
+            <p class="cart-summary-note">
+              All prices in USD. Taxes and duties are estimated at checkout.
+            </p>
+            <button class="cart-primary" type="button" data-cart-checkout>Proceed to Checkout</button>
+          </div>
+        </div>
+        <div class="cart-body cart-body-checkout" data-cart-stage="checkout">
+          <div class="cart-items" data-cart-items-checkout></div>
+          <div class="cart-summary">
+            <div class="cart-summary-row">
+              <span>Order Total</span>
+              <span class="cart-subtotal-amount" data-cart-total>$0</span>
+            </div>
+            <p class="cart-summary-note">
+              This is a conceptual checkout experience for the Montierre portfolio.
+            </p>
+            <button class="cart-primary" type="button" data-cart-place-order>Place Order</button>
+            <button class="cart-secondary" type="button" data-cart-back-to-bag>Back to Bag</button>
+          </div>
+        </div>
+        <div class="cart-body cart-body-confirmation" data-cart-stage="confirmation">
+          <div class="cart-confirmation">
+            <div class="cart-header-label">Montierre</div>
+            <h2>Order Placed</h2>
+            <p>
+              Your selection has been reserved as part of a private fragrance gallery.
+              This confirmation represents a completed journey through the Montierre portfolio.
+            </p>
+            <button class="cart-primary" type="button" data-cart-close-all>Return to Collections</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>Montierre</span>
+        <span>Fragrances Composed as Atmosphere</span>
+      </div>
+    </footer>
+  </div>
+
+  <div class="background-layer">
+    <div class="background-texture"></div>
+    <div class="background-glow"></div>
+  </div>
+
+  <script src="script.js?v=8"></script>
+</body>
+</html>
+

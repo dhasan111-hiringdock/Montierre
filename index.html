@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montierre — Luxury Perfume House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="logo">Montierre</div>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#house">House</a>
+        <a href="#collections">Collections</a>
+        <a href="#cour-royale">Cour Royale</a>
+        <a href="#noir-silhouette">Noir Silhouette</a>
+        <a href="#eternal-veil">Eternal Veil</a>
+        <a href="store.html" class="nav-buy">Buy Now</a>
+      </nav>
+    </header>
+
+    <div class="chapter-nav">
+      <button class="chapter-link" data-target="hero">I</button>
+      <button class="chapter-link" data-target="cour-royale">II</button>
+      <button class="chapter-link" data-target="noir-silhouette">III</button>
+      <button class="chapter-link" data-target="eternal-veil">IV</button>
+    </div>
+
+    <main>
+      <section id="hero" class="section hero">
+        <div class="hero-inner hero-3d">
+          <div class="hero-text">
+            <p class="eyebrow">Atmospheric Luxury</p>
+            <h1>Montierre — A Gallery of Collections</h1>
+            <p class="lead">
+              Enter a revolving fragrance gallery where each Montierre collection becomes its own
+              quiet environment of light, shadow, and scent.
+            </p>
+            <div class="scroll-cue">
+              <span></span>
+              <p>Swipe or hover to explore the collections</p>
+            </div>
+          </div>
+          <div class="hero-carousel">
+            <div class="hero-orbit">
+              <article class="hero-panel hero-panel-cour" data-index="0">
+                <div class="hero-panel-surface">
+                  <div class="hero-panel-meta">Collection I</div>
+                  <h2 class="hero-panel-title">Cour Royale</h2>
+                  <p class="hero-panel-tagline">Silent gold, candlelit halls, authority in a whisper.</p>
+                  <div class="hero-panel-image hero-panel-image-cour"></div>
+                </div>
+              </article>
+              <article class="hero-panel hero-panel-noir" data-index="1">
+                <div class="hero-panel-surface">
+                  <div class="hero-panel-meta">Collection II</div>
+                  <h2 class="hero-panel-title">Noir Silhouette</h2>
+                  <p class="hero-panel-tagline">Glass towers, wet streets, a city drawn in shadow.</p>
+                  <div class="hero-panel-image hero-panel-image-noir"></div>
+                </div>
+              </article>
+              <article class="hero-panel hero-panel-veil" data-index="2">
+                <div class="hero-panel-surface">
+                  <div class="hero-panel-meta">Collection III</div>
+                  <h2 class="hero-panel-title">Eternal Veil</h2>
+                  <p class="hero-panel-tagline">Soft radiance, close to the skin, endlessly unfolding.</p>
+                  <div class="hero-panel-image hero-panel-image-veil"></div>
+                </div>
+              </article>
+            </div>
+            <div class="hero-collections-rail">
+              <button class="hero-collection-dot is-active" data-hero-collection="0">
+                <span class="hero-collection-label">Cour Royale</span>
+              </button>
+              <button class="hero-collection-dot" data-hero-collection="1">
+                <span class="hero-collection-label">Noir Silhouette</span>
+              </button>
+              <button class="hero-collection-dot" data-hero-collection="2">
+                <span class="hero-collection-label">Eternal Veil</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="house" class="section house">
+        <div class="section-inner">
+          <div class="house-grid">
+            <div class="house-copy">
+              <div class="section-label">The House</div>
+              <h2>The House of Montierre</h2>
+              <p>
+                Montierre is a modern perfume house rooted in royal heritage and nocturnal elegance.
+                Each composition is treated as a portrait of a moment in time, captured through scent
+                rather than image. The focus is on atmosphere and presence, not ornament.
+              </p>
+              <p>
+                The Montierre portfolio is presented as a curated exhibition, where every fragrance is
+                an individual work and every collection a chapter in an unfolding story.
+              </p>
+            </div>
+            <div class="house-visual">
+              <div class="house-visual-image" aria-hidden="true"></div>
+              <div class="house-ingredients">
+                <div class="house-ingredients-label">Ingredients</div>
+                <h3 class="house-ingredients-title">The Montierre Palette</h3>
+                <div class="house-ingredients-grid">
+                  <div class="house-ingredients-group">
+                    <div class="house-ingredients-group-title">Woods</div>
+                    <p>Cedarwood, cashmere wood, sandalwood</p>
+                  </div>
+                  <div class="house-ingredients-group">
+                    <div class="house-ingredients-group-title">Resins</div>
+                    <p>Labdanum, tonka bean, amber accords</p>
+                  </div>
+                  <div class="house-ingredients-group">
+                    <div class="house-ingredients-group-title">Citrus</div>
+                    <p>Calabrian bergamot, citrus zest</p>
+                  </div>
+                  <div class="house-ingredients-group">
+                    <div class="house-ingredients-group-title">Florals</div>
+                    <p>Orris, orchid nuances, soft white florals</p>
+                  </div>
+                  <div class="house-ingredients-group">
+                    <div class="house-ingredients-group-title">Spice</div>
+                    <p>Pink pepper, aromatic herbs, tobacco warmth</p>
+                  </div>
+                  <div class="house-ingredients-group">
+                    <div class="house-ingredients-group-title">Signature</div>
+                    <p>Musk, ambroxan, oud, cypriol</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="collections" class="section collections">
+        <div class="section-inner">
+          <div class="section-label">Collections</div>
+          <h2>The Montierre Portfolio</h2>
+          <p>
+            Three collections, fifteen fragrances. Each collection traces a different facet of
+            quiet power and refined presence, from candlelit courts to midnight streets and
+            whispered confessions.
+          </p>
+          <div class="collections-grid">
+            <article class="collection-card collection-card-cour">
+              <h3>Cour Royale</h3>
+              <p>
+                Inspired by the silent authority of royal courts, Cour Royale captures the balance
+                of strength, grace, and mystery. These fragrances are composed for presence rather
+                than attention.
+              </p>
+            </article>
+            <article class="collection-card collection-card-noir">
+              <h3>Noir Silhouette</h3>
+              <p>
+                A study of the city after dark. Noir Silhouette traces the sharp outlines of glass
+                towers, wet pavement, and distant neon, translating modern architecture into scent.
+              </p>
+            </article>
+            <article class="collection-card collection-card-veil">
+              <h3>Eternal Veil</h3>
+              <p>
+                Soft, luminous compositions that linger like a whispered secret. Eternal Veil
+                explores intimate radiance, close to the skin and endlessly unfolding.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="cour-royale" class="section collection-detail">
+        <div class="section-inner">
+          <div class="section-ordinal">I</div>
+          <div class="section-label">Collection I</div>
+          <h2>Cour Royale</h2>
+          <p class="collection-intro">
+            Inspired by the silent authority of royal courts, Cour Royale captures the balance
+            of strength, grace, and mystery. These fragrances are composed for presence rather
+            than attention scents that accompany confidence rather than announce it.
+          </p>
+          <div class="fragrance-list">
+            <article class="fragrance">
+              <div class="fragrance-visual fragrance-cedar">
+                <div class="fragrance-gallery" data-gallery="cedar-flame">
+                  <img
+                    src="assets/Website product Images/Cedar Flame/First Image.jpg"
+                    alt="Montierre Cedar Flame perfume bottle framed by burning cedar wood"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Cedar Flame/First Image.jpg"
+                      aria-label="Cedar Flame hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Cedar Flame/Second Image.jpg"
+                      aria-label="Cedar Flame on pedestal"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Cedar Flame/Third Image.jpg"
+                      aria-label="Cedar Flame on stone ledge"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Cedar Flame</h3>
+                <p>
+                  A rich woody-amber composition of sage, tobacco, patchouli, and creamy woods —
+                  intense, luxurious, and commanding. The opening is aromatic and warm, carrying
+                  hints of sage and spice that feel immediately bold. As the fragrance evolves,
+                  tobacco and woods emerge, wrapped in creamy amber and resinous notes that burn
+                  slowly and leave a powerful impression.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Angelica, Sage, Bergamot, Pink Pepper</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Woody Notes, Tobacco, Patchouli, Helvetolide</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Sage, Tonka Bean, Musk, Vanilla, Cashmere Wood, Ambroxan, Orris, Oud, Cypriol, Labdanum</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="fragrance">
+              <div class="fragrance-visual fragrance-or">
+                <div class="fragrance-gallery" data-gallery="cedar-storm">
+                  <img
+                    src="assets/Website product Images/Cedar Storm/First Image.jpg"
+                    alt="Montierre bottle in a cedar storm inspired composition"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Cedar Storm/First Image.jpg"
+                      aria-label="Cedar Storm hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Cedar Storm/Second Image.jpg"
+                      aria-label="Cedar Storm detail image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Cedar Storm/Third Image.jpg"
+                      aria-label="Cedar Storm alternate angle"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Cedar Storm</h3>
+                <p>
+                  A crisp, modern fresh-woody fragrance driven by bergamot, aromatic spices, and
+                  smooth cedar — clean, confident, and effortlessly powerful. The opening feels
+                  brisk and alive, where sparkling citrus and cracked pepper cut through the air
+                  with clarity. As it settles, aromatic woods and lavender add structure, while
+                  smooth cedar and ambroxan leave a confident, modern trail that feels grounded
+                  yet free.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Calabrian Bergamot, Pepper</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Lavender, Sichuan &amp; Pink Pepper, Vetiver, Patchouli, Geranium, Elemi</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Ambroxan, Cedar, Labdanum</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="fragrance">
+              <div class="fragrance-visual fragrance-nuit">
+                <div class="fragrance-gallery" data-gallery="crimson-saffron">
+                  <img
+                    src="assets/Website product Images/Crimson Saffron/First Image.jpg"
+                    alt="Montierre bottle with crimson saffron tones"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Crimson Saffron/First Image.jpg"
+                      aria-label="Crimson Saffron hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Crimson Saffron/Second Image.jpg"
+                      aria-label="Crimson Saffron detail image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Crimson Saffron/Third Image.jpg"
+                      aria-label="Crimson Saffron alternate angle"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Crimson Saffron</h3>
+                <p>
+                  A dark, opulent amber-woody fragrance featuring saffron, rose, oud, and smoky
+                  resins — intense, luxurious, and powerful. The opening is bold and opulent, where
+                  saffron and rose unfold with intensity. Smoky woods and resinous notes build depth
+                  as the fragrance develops, finishing in a dark, ambered trail that feels powerful
+                  and commanding.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Saffron, Rose, Cinnamon</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Oud, Tobacco, Myrrh, Woody Notes</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Castoreum, Labdanum, Amber, Guaiac Wood, Sandalwood</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="fragrance">
+              <div class="fragrance-visual fragrance-heritage">
+                <div class="fragrance-gallery" data-gallery="pear-bloom">
+                  <img
+                    src="assets/Website product Images/Pear Bloom/First Image.jpg"
+                    alt="Montierre bottle in a soft pear bloom inspired setting"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Pear Bloom/First Image.jpg"
+                      aria-label="Pear Bloom hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Pear Bloom/Second Image.jpg"
+                      aria-label="Pear Bloom detail image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Pear Bloom/Third Image.jpg"
+                      aria-label="Pear Bloom alternate angle"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Pear Bloom</h3>
+                <p>
+                  A luminous fruity-floral gourmand blending pear blossom, soft florals, and brown
+                  sugar — fresh, delicate, and gently addictive. A gentle burst of juicy pear and
+                  bright fruits greets the senses, light and uplifting. Soft white florals bloom at
+                  the heart, while a hint of brown sugar lingers underneath, creating a scent that
+                  feels fresh, tender, and quietly indulgent.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Pear Blossom, Red Berries, Italian Mandarin</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Gardenia, Jasmine, Frangipani</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Brown Sugar, Patchouli</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="fragrance">
+              <div class="fragrance-visual fragrance-majeste">
+                <div class="fragrance-gallery" data-gallery="oud-mirage">
+                  <img
+                    src="assets/Website product Images/Oud Mirage/First Image.jpg"
+                    alt="Montierre bottle in an oud mirage inspired composition"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Oud Mirage/First Image.jpg"
+                      aria-label="Oud Mirage hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Oud Mirage/Second Image.jpg"
+                      aria-label="Oud Mirage detail image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Oud Mirage/Third Image.jpg"
+                      aria-label="Oud Mirage alternate angle"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Oud Mirage</h3>
+                <p>
+                  A refined woody-amber fragrance where elegant oud meets leather, spices, and
+                  aromatic freshness — smooth, mysterious, and sophisticated. The first impression
+                  is refined and airy, touched with spice and subtle sweetness. Oud rises gradually,
+                  polished and smooth, blending with leathered warmth and earthy vetiver to create a
+                  scent that feels composed, mysterious, and quietly luxurious.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Sicilian Bergamot, Pink Pepper, Davana</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Oud, White Amber, Rosemary</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Leather, Musk, Haitian Vetiver</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="noir-silhouette" class="section collection-detail alt">
+        <div class="section-inner">
+          <div class="section-ordinal">II</div>
+          <div class="section-label">Collection II</div>
+          <h2>Noir Silhouette</h2>
+          <p class="collection-intro">
+            Noir Silhouette traces the city after dark. Glass towers, quiet corridors, the glow of
+            distant neon reflected on wet stone these fragrances frame the outline of a life lived
+            in composed shadows. Each scent is a contour rather than a spotlight, designed for
+            those who prefer definition over display.
+          </p>
+          <div class="fragrance-list">
+            <article class="fragrance">
+              <div class="fragrance-visual">
+                <div class="fragrance-gallery" data-gallery="midnight-orchid">
+                  <img
+                    src="assets/Website product Images/Midnight Orchid/First Image.jpg"
+                    alt="Montierre bottle in a midnight orchid inspired composition"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Midnight Orchid/First Image.jpg"
+                      aria-label="Midnight Orchid hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Midnight Orchid/Second Image.jpg"
+                      aria-label="Midnight Orchid detail image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Midnight Orchid/Third Image.jpg"
+                      aria-label="Midnight Orchid alternate angle"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Midnight Orchid</h3>
+                <p>
+                  A deep, indulgent amber-floral gourmand layered with orchid, dark chocolate,
+                  spices, and creamy woods — bold, sensual, and dramatic. Rich and enveloping from
+                  the first breath, dark fruits and florals unfold with a mysterious warmth. Spices
+                  and orchid deepen the experience, melting into chocolate-toned woods and amber,
+                  leaving behind a trail that feels bold, sensual, and unforgettable.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Truffle, Gardenia, Black Currant, Ylang-Ylang, Jasmine, Bergamot, Mandarin, Amalfi Lemon</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Orchid, Spices, Gardenia</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Mexican Chocolate, Patchouli, Vanilla, Incense, Amber, Sandalwood, Vetiver, White Musk</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="fragrance">
+              <div class="fragrance-visual">
+                <div class="fragrance-gallery" data-gallery="ocean-musk">
+                  <img
+                    src="assets/Website product Images/Ocean Musk/First Image.jpg"
+                    alt="Montierre bottle with ocean musk inspired reflections"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Ocean Musk/First Image.jpg"
+                      aria-label="Ocean Musk hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Ocean Musk/Second Image.jpg"
+                      aria-label="Ocean Musk detail image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Ocean Musk/Third Image.jpg"
+                      aria-label="Ocean Musk alternate angle"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Ocean Musk</h3>
+                <p>
+                  A fresh yet comforting amber-gourmand scent blending citrus brightness, soft
+                  florals, and musky woods — airy, smooth, and inviting. A bright splash of citrus
+                  and fruit opens the fragrance with freshness and ease. Floral notes soften the
+                  heart, while musky woods anchor the base, leaving behind a clean, breezy trail
+                  that feels calm, modern, and effortlessly wearable.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Raspberry, Orange Oil, Bergamot</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Lavender, Jasmine, Caramel</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Sandalwood, Patchouli</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="fragrance">
+              <div class="fragrance-visual">
+                <div class="fragrance-gallery" data-gallery="pine-noir">
+                  <img
+                    src="assets/Website product Images/Pine Noir/First Image.jpg"
+                    alt="Montierre bottle in a pine noir inspired forest composition"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Pine Noir/First Image.jpg"
+                      aria-label="Pine Noir hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Pine Noir/Second Image.jpg"
+                      aria-label="Pine Noir detail image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Pine Noir/Third Image.jpg"
+                      aria-label="Pine Noir alternate angle"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Pine Noir</h3>
+                <p>
+                  A smoky, contemporary woody fragrance infused with crisp fruits, mossy woods, and
+                  ambroxan — raw, refined, and magnetic. Crisp fruits and subtle spice rise sharply
+                  at the start, clean and energetic. Soon, smoky woods and moss take over, creating
+                  a refined contrast between freshness and depth that feels raw, contemporary, and
+                  unmistakably confident.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Bergamot, Black Currant, Apple, Lemon, Pink Pepper</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Pineapple, Patchouli, Moroccan Jasmine</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Birch, Musk, Oak Moss, Ambroxan, Cedarwood</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="eternal-veil" class="section collection-detail">
+        <div class="section-inner">
+          <div class="section-ordinal">III</div>
+          <div class="section-label">Collection III</div>
+          <h2>Eternal Veil</h2>
+          <p class="collection-intro">
+            Eternal Veil explores luminous softness. These fragrances sit close to the skin,
+            unfolding with patience and restraint like light filtered through sheer fabric or a
+            memory returning in fragments. Designed not to project, but to surround, they are
+            signatures meant for the wearer before anyone else.
+          </p>
+          <div class="fragrance-list">
+            <article class="fragrance">
+              <div class="fragrance-visual">
+                <div class="fragrance-gallery" data-gallery="citrus-drift">
+                  <img
+                    src="assets/Website product Images/Citrus Drift/First Image.jpg"
+                    alt="Montierre bottle in a citrus drift inspired light"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Citrus Drift/First Image.jpg"
+                      aria-label="Citrus Drift hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Citrus Drift/Second Image.jpg"
+                      aria-label="Citrus Drift detail image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Citrus Drift/Third Image.jpg"
+                      aria-label="Citrus Drift alternate angle"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Citrus Drift</h3>
+                <p>
+                  A vibrant citrus-aromatic fragrance layered with mint, lavender, and smooth
+                  amber-vanilla — refreshing, clean, and effortlessly modern. Fresh green notes and
+                  citrus peel rise together, bright and refreshing from the first moment. As it
+                  settles, soft florals and warm undertones emerge, creating a smooth balance that
+                  feels clean, uplifting, and perfectly relaxed.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Mugwort, Mint Leaf, Orange Peel</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Benzoin, Silver Lavender, Orange Blossom</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Tonka Bean, Amberwood, Vanilla</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="fragrance">
+              <div class="fragrance-visual">
+                <div class="fragrance-gallery" data-gallery="sugar-veil">
+                  <img
+                    src="assets/Website product Images/Sugar Veil/First Image.jpg"
+                    alt="Montierre bottle in a sugar veil inspired soft setting"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Sugar Veil/First Image.jpg"
+                      aria-label="Sugar Veil hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Sugar Veil/Second Image.jpg"
+                      aria-label="Sugar Veil detail image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Sugar Veil/Third Image.jpg"
+                      aria-label="Sugar Veil alternate angle"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Sugar Veil</h3>
+                <p>
+                  A warm, sweet, intimate gourmand-amber-floral fragrance built around vanilla
+                  orchid, brown sugar, tonka bean, and amber-rich woods — soft, modern,
+                  irresistible. Soft florals drift in gently, creamy and inviting, before giving way
+                  to a warm sweetness that feels comforting rather than loud. As it settles, ambered
+                  woods and musk create a smooth, intimate aura that stays close and lingers
+                  beautifully.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Vanilla Orchid, Jasmine</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Brown Sugar, Tonka Bean</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Amber, Amberwood, Musk, Patchouli</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="fragrance">
+              <div class="fragrance-visual">
+                <div class="fragrance-gallery" data-gallery="spiced-brew">
+                  <img
+                    src="assets/Website product Images/Spiced Brew/First Image.jpg"
+                    alt="Montierre bottle in a spiced brew inspired composition"
+                    class="fragrance-main"
+                  >
+                  <div class="fragrance-thumbs">
+                    <button
+                      class="fragrance-thumb is-active"
+                      data-image="assets/Website product Images/Spiced Brew/First Image.jpg"
+                      aria-label="Spiced Brew hero image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Spiced Brew/Second Image.jpg"
+                      aria-label="Spiced Brew detail image"
+                    ></button>
+                    <button
+                      class="fragrance-thumb"
+                      data-image="assets/Website product Images/Spiced Brew/Third Image.jpg"
+                      aria-label="Spiced Brew alternate angle"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+              <div class="fragrance-text">
+                <h3>Spiced Brew</h3>
+                <p>
+                  A bold, cozy gourmand fragrance infused with warm spices, praline sweetness,
+                  coffee, and vanilla — rich, addictive, and indulgent. Warm spices surface
+                  instantly, rich and inviting, creating a sense of comfort and depth. Sweet notes
+                  follow, blending with coffee and vanilla to form a layered gourmand experience
+                  that feels indulgent, cozy, and deeply satisfying.
+                </p>
+                <div class="notes">
+                  <div>
+                    <h4>Top</h4>
+                    <p>Cinnamon, Cardamom, Ginger</p>
+                  </div>
+                  <div>
+                    <h4>Heart</h4>
+                    <p>Praline, Candied Fruits, White Flowers</p>
+                  </div>
+                  <div>
+                    <h4>Base</h4>
+                    <p>Vanilla, Coffee, Tonka Bean, Benzoin, Musk</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section closing">
+        <div class="section-inner">
+          <div class="section-label">Montierre</div>
+          <h2>A Gallery of Scent</h2>
+          <p>
+            Montierre is an ongoing composition. New works appear not as launches, but as
+            additions to a living gallery. Each fragrance is an invitation to inhabit a different
+            light, a different room, a different silence.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>Montierre</span>
+        <span>Fragrances Composed as Atmosphere</span>
+      </div>
+    </footer>
+  </div>
+
+  <div class="background-layer">
+    <div class="background-texture"></div>
+    <div class="background-glow"></div>
+  </div>
+
+  <script src="script.js?v=8"></script>
+</body>
+</html>
