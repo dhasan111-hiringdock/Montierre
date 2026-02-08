@@ -87,7 +87,7 @@
                       <input type="radio" name="shipping" value="standard" checked>
                       <span class="checkout-option-main">
                         <span>Standard courier</span>
-                        <span>Complimentary for Montierre orders</span>
+                        <span>Flat ₹100 shipping within India</span>
                       </span>
                     </label>
                     <label class="checkout-option">
@@ -120,14 +120,33 @@
                 <h3>Your Selection</h3>
               </div>
               <div class="checkout-items" data-checkout-items></div>
+              <div class="checkout-coupon">
+                <label for="checkout-coupon-input">Discount coupon</label>
+                <div class="checkout-coupon-row">
+                  <input id="checkout-coupon-input" data-checkout-coupon-input autocomplete="off">
+                  <button type="button" data-checkout-coupon-apply>Apply</button>
+                </div>
+                <div class="checkout-coupon-message" data-checkout-coupon-message></div>
+              </div>
               <div class="checkout-totals">
                 <div class="checkout-totals-row">
+                  <span>Subtotal</span>
+                  <span data-checkout-subtotal>₹0</span>
+                </div>
+                <div class="checkout-totals-row">
+                  <span>Shipping</span>
+                  <span data-checkout-shipping>₹0</span>
+                </div>
+                <div class="checkout-totals-row" data-checkout-discount-row style="display: none">
+                  <span>Discount</span>
+                  <span data-checkout-discount>-₹0</span>
+                </div>
+                <div class="checkout-totals-row">
                   <span>Order Total</span>
-                  <span class="checkout-total-amount" data-checkout-total>$0</span>
+                  <span class="checkout-total-amount" data-checkout-total>₹0</span>
                 </div>
                 <p class="checkout-note">
-                  All pricing is presented in USD. Final tax and duty treatment depends
-                  on destination and will be confirmed separately.
+                  All prices are in INR. Standard shipping within India is ₹100 per order.
                 </p>
               </div>
             </aside>
@@ -171,30 +190,30 @@
         </header>
         <div class="cart-body cart-body-cart is-active" data-cart-stage="cart">
           <div class="cart-items" data-cart-items></div>
-          <div class="cart-summary">
-            <div class="cart-summary-row">
-              <span>Subtotal</span>
-              <span class="cart-subtotal-amount" data-cart-subtotal>$0</span>
+            <div class="cart-summary">
+              <div class="cart-summary-row">
+                <span>Subtotal</span>
+                <span class="cart-subtotal-amount" data-cart-subtotal>₹0</span>
+              </div>
+              <p class="cart-summary-note">
+                All prices in INR. Shipping within India is added at checkout.
+              </p>
+              <button class="cart-primary" type="button" data-cart-checkout>Proceed to Checkout</button>
             </div>
-            <p class="cart-summary-note">
-              All prices in USD. Taxes and duties are estimated at checkout.
-            </p>
-            <button class="cart-primary" type="button" data-cart-checkout>Proceed to Checkout</button>
-          </div>
         </div>
         <div class="cart-body cart-body-checkout" data-cart-stage="checkout">
           <div class="cart-items" data-cart-items-checkout></div>
-          <div class="cart-summary">
-            <div class="cart-summary-row">
-              <span>Order Total</span>
-              <span class="cart-subtotal-amount" data-cart-total>$0</span>
+            <div class="cart-summary">
+              <div class="cart-summary-row">
+                <span>Order Total</span>
+                <span class="cart-subtotal-amount" data-cart-total>₹0</span>
+              </div>
+              <p class="cart-summary-note">
+                Order total includes products, ₹100 shipping, and any applied discount.
+              </p>
+              <button class="cart-primary" type="button" data-cart-place-order>Place Order</button>
+              <button class="cart-secondary" type="button" data-cart-back-to-bag>Back to Bag</button>
             </div>
-            <p class="cart-summary-note">
-              This is a conceptual checkout experience for the Montierre portfolio.
-            </p>
-            <button class="cart-primary" type="button" data-cart-place-order>Place Order</button>
-            <button class="cart-secondary" type="button" data-cart-back-to-bag>Back to Bag</button>
-          </div>
         </div>
         <div class="cart-body cart-body-confirmation" data-cart-stage="confirmation">
           <div class="cart-confirmation">
@@ -226,4 +245,3 @@
   <script src="script.js?v=8"></script>
 </body>
 </html>
-

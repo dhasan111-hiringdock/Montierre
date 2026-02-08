@@ -31,6 +31,13 @@ const buyNowLinks = document.querySelectorAll("[data-buy-now]");
 const checkoutSection = document.getElementById("checkout");
 const checkoutItems = document.querySelector("[data-checkout-items]");
 const checkoutTotal = document.querySelector("[data-checkout-total]");
+const checkoutSubtotalAmount = document.querySelector("[data-checkout-subtotal]");
+const checkoutShippingAmount = document.querySelector("[data-checkout-shipping]");
+const checkoutDiscountAmount = document.querySelector("[data-checkout-discount]");
+const checkoutDiscountRow = document.querySelector("[data-checkout-discount-row]");
+const checkoutCouponInput = document.querySelector("[data-checkout-coupon-input]");
+const checkoutCouponApply = document.querySelector("[data-checkout-coupon-apply]");
+const checkoutCouponMessage = document.querySelector("[data-checkout-coupon-message]");
 const checkoutForm = document.querySelector("[data-checkout-form]");
 const checkoutThankyou = document.querySelector("[data-checkout-thankyou]");
 const checkoutReturn = document.querySelector("[data-checkout-return]");
@@ -39,6 +46,10 @@ const checkoutReviewBack = document.querySelector("[data-checkout-review-back]")
 const checkoutReviewContinue = document.querySelector("[data-checkout-review-continue]");
 const storeRoot = document.querySelector("[data-store-root]");
 const CART_STORAGE_KEY = "montierre-cart";
+const SHIPPING_FEE = 100;
+const COUPON_CODE = "MONTIERRE10";
+const COUPON_PERCENT = 10;
+let appliedCouponCode = "";
 let fragranceLightbox;
 let fragranceLightboxImage;
 let fragranceLightboxThumbs;
@@ -338,21 +349,21 @@ if (heroOrbit && heroCollectionDots.length && heroPanels.length) {
 }
 
 const productCatalog = {
-  "cedar-flame": { name: "Cedar Flame", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 180 }, { id: "100", label: "100 ml", price: 260 }] },
-  "cedar-storm": { name: "Cedar Storm", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 175 }, { id: "100", label: "100 ml", price: 255 }] },
-  "crimson-saffron": { name: "Crimson Saffron", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 210 }, { id: "100", label: "100 ml", price: 290 }] },
-  "pear-bloom": { name: "Pear Bloom", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 170 }, { id: "100", label: "100 ml", price: 245 }] },
-  "oud-mirage": { name: "Oud Mirage", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 220 }, { id: "100", label: "100 ml", price: 305 }] },
-  "midnight-orchid": { name: "Midnight Orchid", collection: "Noir Silhouette", sizes: [{ id: "50", label: "50 ml", price: 200 }, { id: "100", label: "100 ml", price: 285 }] },
-  "ocean-musk": { name: "Ocean Musk", collection: "Noir Silhouette", sizes: [{ id: "50", label: "50 ml", price: 175 }, { id: "100", label: "100 ml", price: 250 }] },
-  "pine-noir": { name: "Pine Noir", collection: "Noir Silhouette", sizes: [{ id: "50", label: "50 ml", price: 185 }, { id: "100", label: "100 ml", price: 265 }] },
-  "citrus-drift": { name: "Citrus Drift", collection: "Eternal Veil", sizes: [{ id: "50", label: "50 ml", price: 165 }, { id: "100", label: "100 ml", price: 240 }] },
-  "sugar-veil": { name: "Sugar Veil", collection: "Eternal Veil", sizes: [{ id: "50", label: "50 ml", price: 190 }, { id: "100", label: "100 ml", price: 270 }] },
-  "spiced-brew": { name: "Spiced Brew", collection: "Eternal Veil", sizes: [{ id: "50", label: "50 ml", price: 185 }, { id: "100", label: "100 ml", price: 265 }] }
+  "cedar-flame": { name: "Cedar Flame", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
+  "cedar-storm": { name: "Cedar Storm", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
+  "crimson-saffron": { name: "Crimson Saffron", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
+  "pear-bloom": { name: "Pear Bloom", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
+  "oud-mirage": { name: "Oud Mirage", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
+  "midnight-orchid": { name: "Midnight Orchid", collection: "Noir Silhouette", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
+  "ocean-musk": { name: "Ocean Musk", collection: "Noir Silhouette", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
+  "pine-noir": { name: "Pine Noir", collection: "Noir Silhouette", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
+  "citrus-drift": { name: "Citrus Drift", collection: "Eternal Veil", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
+  "sugar-veil": { name: "Sugar Veil", collection: "Eternal Veil", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
+  "spiced-brew": { name: "Spiced Brew", collection: "Eternal Veil", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] }
 };
 
 function formatPrice(amount) {
-  return `$${amount.toLocaleString("en-US", { minimumFractionDigits: 0 })}`;
+  return `₹${amount.toLocaleString("en-IN", { maximumFractionDigits: 0 })}`;
 }
 
 function setCartStage(stage) {
@@ -390,6 +401,66 @@ function saveCartToStorage() {
     window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItemsState));
   } catch {
   }
+}
+
+function ensureStoreProductImages() {
+  if (Object.keys(storeProductImages).length) return;
+  const base = "Assets/Website product Images";
+  storeProductImages["cedar-flame"] = {
+    hero: `${base}/Cedar Flame/Second Image.jpg`,
+    images: [`${base}/Cedar Flame/Second Image.jpg`]
+  };
+  storeProductImages["cedar-storm"] = {
+    hero: `${base}/Cedar Storm/Second Image.jpg`,
+    images: [`${base}/Cedar Storm/Second Image.jpg`]
+  };
+  storeProductImages["crimson-saffron"] = {
+    hero: `${base}/Crimson Saffron/Second Image.jpg`,
+    images: [`${base}/Crimson Saffron/Second Image.jpg`]
+  };
+  storeProductImages["pear-bloom"] = {
+    hero: `${base}/Pear Bloom/Second Image.jpg`,
+    images: [`${base}/Pear Bloom/Second Image.jpg`]
+  };
+  storeProductImages["oud-mirage"] = {
+    hero: `${base}/Oud Mirage/Second Image.jpg`,
+    images: [`${base}/Oud Mirage/Second Image.jpg`]
+  };
+  storeProductImages["midnight-orchid"] = {
+    hero: `${base}/Midnight Orchid/Second Image.jpg`,
+    images: [`${base}/Midnight Orchid/Second Image.jpg`]
+  };
+  storeProductImages["ocean-musk"] = {
+    hero: `${base}/Ocean Musk/Second Image.jpg`,
+    images: [`${base}/Ocean Musk/Second Image.jpg`]
+  };
+  storeProductImages["pine-noir"] = {
+    hero: `${base}/Pine Noir/Second Image.jpg`,
+    images: [`${base}/Pine Noir/Second Image.jpg`]
+  };
+  storeProductImages["citrus-drift"] = {
+    hero: `${base}/Citrus Drift/Second Image.jpg`,
+    images: [`${base}/Citrus Drift/Second Image.jpg`]
+  };
+  storeProductImages["sugar-veil"] = {
+    hero: `${base}/Sugar Veil/Second Image.jpg`,
+    images: [`${base}/Sugar Veil/Second Image.jpg`]
+  };
+  storeProductImages["spiced-brew"] = {
+    hero: `${base}/Spiced Brew/Second Image.jpg`,
+    images: [`${base}/Spiced Brew/Second Image.jpg`]
+  };
+}
+
+function calculateTotals(subtotal) {
+  const shipping = cartItemsState.length ? SHIPPING_FEE : 0;
+  const discountBase = subtotal;
+  let discount = 0;
+  if (appliedCouponCode === COUPON_CODE && COUPON_PERCENT > 0) {
+    discount = Math.round(discountBase * (COUPON_PERCENT / 100));
+  }
+  const total = Math.max(0, subtotal + shipping - discount);
+  return { subtotal, shipping, discount, total };
 }
 
 function getProductSize(productId, sizeId) {
@@ -513,8 +584,9 @@ function renderCart() {
     catalogList.appendChild(row);
   });
   cartItems.appendChild(catalogWrapper);
-  cartSubtotal.textContent = formatPrice(subtotal);
-  cartTotal.textContent = formatPrice(subtotal);
+  const totals = calculateTotals(subtotal);
+  cartSubtotal.textContent = formatPrice(totals.subtotal);
+  cartTotal.textContent = formatPrice(totals.total);
   updateCartCount();
   saveCartToStorage();
   renderCheckoutSummary();
@@ -528,7 +600,11 @@ function renderCheckoutSummary() {
     empty.className = "cart-empty";
     empty.textContent = "Your order summary will appear here once you add a fragrance.";
     checkoutItems.appendChild(empty);
-    checkoutTotal.textContent = "$0";
+    if (checkoutSubtotalAmount) checkoutSubtotalAmount.textContent = formatPrice(0);
+    if (checkoutShippingAmount) checkoutShippingAmount.textContent = formatPrice(0);
+    if (checkoutDiscountAmount) checkoutDiscountAmount.textContent = formatPrice(0);
+    if (checkoutDiscountRow) checkoutDiscountRow.style.display = "none";
+    checkoutTotal.textContent = formatPrice(0);
     return;
   }
   let subtotal = 0;
@@ -558,7 +634,19 @@ function renderCheckoutSummary() {
     row.appendChild(price);
     checkoutItems.appendChild(row);
   });
-  checkoutTotal.textContent = formatPrice(subtotal);
+  const totals = calculateTotals(subtotal);
+  if (checkoutSubtotalAmount) checkoutSubtotalAmount.textContent = formatPrice(totals.subtotal);
+  if (checkoutShippingAmount) checkoutShippingAmount.textContent = formatPrice(totals.shipping);
+  if (checkoutDiscountAmount && checkoutDiscountRow) {
+    if (totals.discount > 0) {
+      checkoutDiscountAmount.textContent = `−${formatPrice(totals.discount).replace("₹", "")}`;
+      checkoutDiscountRow.style.display = "";
+    } else {
+      checkoutDiscountAmount.textContent = formatPrice(0);
+      checkoutDiscountRow.style.display = "none";
+    }
+  }
+  checkoutTotal.textContent = formatPrice(totals.total);
 }
 
 function openCart() {
@@ -714,6 +802,7 @@ function completeCheckout() {
   checkoutForm.style.display = "none";
   checkoutThankyou.classList.add("is-visible");
   cartItemsState = [];
+  appliedCouponCode = "";
   renderCart();
   renderCheckoutSummary();
 }
@@ -731,6 +820,7 @@ if (checkoutForm && checkoutThankyou) {
 
 function buildStore() {
   if (!storeRoot) return;
+  ensureStoreProductImages();
   const fragranceNodes = document.querySelectorAll(".fragrance");
   fragranceNodes.forEach(node => {
     const gallery = node.querySelector(".fragrance-gallery");
@@ -877,3 +967,30 @@ loadCartFromStorage();
 buildStore();
 renderCart();
 initCartInteractions();
+
+if (checkoutCouponApply && checkoutCouponInput) {
+  checkoutCouponApply.addEventListener("click", () => {
+    const rawCode = checkoutCouponInput.value.trim();
+    const code = rawCode.toUpperCase();
+    if (!code) {
+      appliedCouponCode = "";
+      if (checkoutCouponMessage) {
+        checkoutCouponMessage.textContent = "";
+      }
+      renderCart();
+      return;
+    }
+    if (code === COUPON_CODE) {
+      appliedCouponCode = code;
+      if (checkoutCouponMessage) {
+        checkoutCouponMessage.textContent = "Discount applied.";
+      }
+    } else {
+      appliedCouponCode = "";
+      if (checkoutCouponMessage) {
+        checkoutCouponMessage.textContent = "This code could not be applied.";
+      }
+    }
+    renderCart();
+  });
+}
