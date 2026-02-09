@@ -302,6 +302,49 @@ window.addEventListener("mousemove", event => {
   heroLight.style.transform = `translate3d(${x}px, ${y}px, 0)`;
 });
 
+const heroSection = document.querySelector(".hero");
+const heroBackgroundDots = document.querySelectorAll(".hero-background-dot");
+
+if (heroSection && heroBackgroundDots.length) {
+  const heroBackgroundImages = [
+    "Assets/Website product Images/Hero Section Background/ChatGPT Image Feb 9, 2026, 02_57_13 PM.png",
+    "Assets/Website product Images/Hero Section Background/ChatGPT Image Feb 9, 2026, 02_57_27 PM.png",
+    "Assets/Website product Images/Hero Section Background/ChatGPT Image Feb 9, 2026, 02_59_26 PM.png"
+  ];
+  let heroBackgroundIndex = 0;
+  let heroBackgroundTimerId;
+  function setHeroBackgroundIndex(index, fromUser) {
+    const total = heroBackgroundImages.length;
+    if (!total) return;
+    const nextIndex = ((index % total) + total) % total;
+    heroBackgroundDots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("is-active", dotIndex === nextIndex);
+    });
+    const image = heroBackgroundImages[nextIndex];
+    heroSection.style.backgroundImage =
+      `linear-gradient(to bottom, rgba(5, 5, 6, 0.9), rgba(5, 5, 6, 0.85)), url("${image}")`;
+    heroBackgroundIndex = nextIndex;
+    if (fromUser && heroBackgroundTimerId) {
+      window.clearInterval(heroBackgroundTimerId);
+      heroBackgroundTimerId = undefined;
+    }
+  }
+  function startHeroBackgroundAuto() {
+    if (heroBackgroundTimerId) return;
+    heroBackgroundTimerId = window.setInterval(() => {
+      setHeroBackgroundIndex(heroBackgroundIndex + 1, false);
+    }, 9000);
+  }
+  heroBackgroundDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      setHeroBackgroundIndex(index, true);
+      startHeroBackgroundAuto();
+    });
+  });
+  setHeroBackgroundIndex(0, true);
+  startHeroBackgroundAuto();
+}
+
 if (heroOrbit && heroCollectionDots.length && heroPanels.length) {
   let heroIndex = 0;
   let heroTimerId;
@@ -350,17 +393,17 @@ if (heroOrbit && heroCollectionDots.length && heroPanels.length) {
 }
 
 const productCatalog = {
-  "cedar-flame": { name: "Cedar Flame", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
-  "cedar-storm": { name: "Cedar Storm", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
-  "crimson-saffron": { name: "Crimson Saffron", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
-  "pear-bloom": { name: "Pear Bloom", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
-  "oud-mirage": { name: "Oud Mirage", collection: "Cour Royale", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
-  "midnight-orchid": { name: "Midnight Orchid", collection: "Noir Silhouette", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
-  "ocean-musk": { name: "Ocean Musk", collection: "Noir Silhouette", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
-  "pine-noir": { name: "Pine Noir", collection: "Noir Silhouette", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
-  "citrus-drift": { name: "Citrus Drift", collection: "Eternal Veil", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
-  "sugar-veil": { name: "Sugar Veil", collection: "Eternal Veil", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] },
-  "spiced-brew": { name: "Spiced Brew", collection: "Eternal Veil", sizes: [{ id: "50", label: "50 ml", price: 1550 }, { id: "100", label: "100 ml", price: 1550 }] }
+  "cedar-flame": { name: "Cedar Flame", collection: "Privé", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] },
+  "cedar-storm": { name: "Cedar Storm", collection: "Haute", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] },
+  "crimson-saffron": { name: "Crimson Saffron", collection: "Privé", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] },
+  "pear-bloom": { name: "Pear Bloom", collection: "Haute", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] },
+  "oud-mirage": { name: "Oud Mirage", collection: "Privé", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] },
+  "midnight-orchid": { name: "Midnight Orchid", collection: "Signature", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] },
+  "ocean-musk": { name: "Ocean Musk", collection: "Signature", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] },
+  "pine-noir": { name: "Pine Noir", collection: "Privé", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] },
+  "citrus-drift": { name: "Citrus Drift", collection: "Haute", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] },
+  "sugar-veil": { name: "Sugar Veil", collection: "Signature", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] },
+  "spiced-brew": { name: "Spiced Brew", collection: "Signature", sizes: [{ id: "50", label: "50 ml", price: 1200 }, { id: "100", label: "100 ml", price: 1200 }] }
 };
 
 function formatPrice(amount) {

@@ -7,12 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
   <div class="page">
     <header class="header">
-      <div class="logo">Montierre</div>
+      <a href="#hero" class="logo">
+        <img
+          src="Assets/Website product Images/Logo/logo.png"
+          alt="Montierre logo"
+          class="logo-image"
+        >
+      </a>
       <button class="menu-toggle" aria-label="Toggle navigation">
         <span></span>
         <span></span>
@@ -21,9 +27,9 @@
         <a href="#hero">Home</a>
         <a href="#house">House</a>
         <a href="#collections">Collections</a>
-        <a href="#cour-royale">Cour Royale</a>
-        <a href="#noir-silhouette">Noir Silhouette</a>
-        <a href="#eternal-veil">Eternal Veil</a>
+        <a href="#cour-royale">Signature</a>
+        <a href="#noir-silhouette">Privé</a>
+        <a href="#eternal-veil">Haute</a>
         <a href="store.html" class="nav-buy">Buy Now</a>
       </nav>
     </header>
@@ -40,55 +46,21 @@
         <div class="hero-inner hero-3d">
           <div class="hero-text">
             <p class="eyebrow">Atmospheric Luxury</p>
-            <h1>Montierre — A Gallery of Collections</h1>
+            <h1>Montierre — The Art of Atmosphere</h1>
             <p class="lead">
-              Enter a revolving fragrance gallery where each Montierre collection becomes its own
-              quiet environment of light, shadow, and scent.
+              Montierre designs fragrances as immersive spaces — quiet rooms of light, shadow, and
+              texture that unfold slowly on skin and in the air.
             </p>
             <div class="scroll-cue">
               <span></span>
-              <p>Swipe or hover to explore the collections</p>
+              <p>Scroll to discover the house</p>
             </div>
           </div>
-          <div class="hero-carousel">
-            <div class="hero-orbit">
-              <article class="hero-panel hero-panel-cour" data-index="0">
-                <div class="hero-panel-surface">
-                  <div class="hero-panel-meta">Collection I</div>
-                  <h2 class="hero-panel-title">Cour Royale</h2>
-                  <p class="hero-panel-tagline">Silent gold, candlelit halls, authority in a whisper.</p>
-                  <div class="hero-panel-image hero-panel-image-cour"></div>
-                </div>
-              </article>
-              <article class="hero-panel hero-panel-noir" data-index="1">
-                <div class="hero-panel-surface">
-                  <div class="hero-panel-meta">Collection II</div>
-                  <h2 class="hero-panel-title">Noir Silhouette</h2>
-                  <p class="hero-panel-tagline">Glass towers, wet streets, a city drawn in shadow.</p>
-                  <div class="hero-panel-image hero-panel-image-noir"></div>
-                </div>
-              </article>
-              <article class="hero-panel hero-panel-veil" data-index="2">
-                <div class="hero-panel-surface">
-                  <div class="hero-panel-meta">Collection III</div>
-                  <h2 class="hero-panel-title">Eternal Veil</h2>
-                  <p class="hero-panel-tagline">Soft radiance, close to the skin, endlessly unfolding.</p>
-                  <div class="hero-panel-image hero-panel-image-veil"></div>
-                </div>
-              </article>
-            </div>
-            <div class="hero-collections-rail">
-              <button class="hero-collection-dot is-active" data-hero-collection="0">
-                <span class="hero-collection-label">Cour Royale</span>
-              </button>
-              <button class="hero-collection-dot" data-hero-collection="1">
-                <span class="hero-collection-label">Noir Silhouette</span>
-              </button>
-              <button class="hero-collection-dot" data-hero-collection="2">
-                <span class="hero-collection-label">Eternal Veil</span>
-              </button>
-            </div>
-          </div>
+        </div>
+        <div class="hero-background-rail">
+          <button class="hero-background-dot is-active" data-hero-bg="0" aria-label="Hero image 1"></button>
+          <button class="hero-background-dot" data-hero-bg="1" aria-label="Hero image 2"></button>
+          <button class="hero-background-dot" data-hero-bg="2" aria-label="Hero image 3"></button>
         </div>
       </section>
 
@@ -109,37 +81,11 @@
               </p>
             </div>
             <div class="house-visual">
-              <div class="house-visual-image" aria-hidden="true"></div>
-              <div class="house-ingredients">
-                <div class="house-ingredients-label">Ingredients</div>
-                <h3 class="house-ingredients-title">The Montierre Palette</h3>
-                <div class="house-ingredients-grid">
-                  <div class="house-ingredients-group">
-                    <div class="house-ingredients-group-title">Woods</div>
-                    <p>Cedarwood, cashmere wood, sandalwood</p>
-                  </div>
-                  <div class="house-ingredients-group">
-                    <div class="house-ingredients-group-title">Resins</div>
-                    <p>Labdanum, tonka bean, amber accords</p>
-                  </div>
-                  <div class="house-ingredients-group">
-                    <div class="house-ingredients-group-title">Citrus</div>
-                    <p>Calabrian bergamot, citrus zest</p>
-                  </div>
-                  <div class="house-ingredients-group">
-                    <div class="house-ingredients-group-title">Florals</div>
-                    <p>Orris, orchid nuances, soft white florals</p>
-                  </div>
-                  <div class="house-ingredients-group">
-                    <div class="house-ingredients-group-title">Spice</div>
-                    <p>Pink pepper, aromatic herbs, tobacco warmth</p>
-                  </div>
-                  <div class="house-ingredients-group">
-                    <div class="house-ingredients-group-title">Signature</div>
-                    <p>Musk, ambroxan, oud, cypriol</p>
-                  </div>
-                </div>
-              </div>
+              <img
+                src="Assets/Website product Images/Banner.png"
+                alt="Montierre banner featuring the fragrance collection"
+                class="house-banner"
+              >
             </div>
           </div>
         </div>
@@ -150,31 +96,30 @@
           <div class="section-label">Collections</div>
           <h2>The Montierre Portfolio</h2>
           <p>
-            Three collections, fifteen fragrances. Each collection traces a different facet of
-            quiet power and refined presence, from candlelit courts to midnight streets and
-            whispered confessions.
+            Three collections, fifteen fragrances. Signature, Privé, and Haute trace different
+            expressions of quiet power, from effortless daily luxury to rare, avant-garde works.
           </p>
           <div class="collections-grid">
             <article class="collection-card collection-card-cour">
-              <h3>Cour Royale</h3>
+              <h3>Signature</h3>
               <p>
-                Inspired by the silent authority of royal courts, Cour Royale captures the balance
-                of strength, grace, and mystery. These fragrances are composed for presence rather
-                than attention.
+                Signature is our everyday luxury collection, versatile, elegant, and designed to be
+                worn effortlessly. Each fragrance embodies subtle sophistication for daily moments
+                of refinement.
               </p>
             </article>
             <article class="collection-card collection-card-noir">
-              <h3>Noir Silhouette</h3>
+              <h3>Privé</h3>
               <p>
-                A study of the city after dark. Noir Silhouette traces the sharp outlines of glass
-                towers, wet pavement, and distant neon, translating modern architecture into scent.
+                Privé is our exclusive collection for the discerning connoisseur. These are rare
+                and precious scents, crafted with the finest ingredients for unforgettable presence.
               </p>
             </article>
             <article class="collection-card collection-card-veil">
-              <h3>Eternal Veil</h3>
+              <h3>Haute</h3>
               <p>
-                Soft, luminous compositions that linger like a whispered secret. Eternal Veil
-                explores intimate radiance, close to the skin and endlessly unfolding.
+                Haute is the pinnacle of luxury — our most artistic and avant-garde creations for
+                those who seek to make a statement.
               </p>
             </article>
           </div>
@@ -184,12 +129,12 @@
       <section id="cour-royale" class="section collection-detail">
         <div class="section-inner">
           <div class="section-ordinal">I</div>
-          <div class="section-label">Collection I</div>
-          <h2>Cour Royale</h2>
+          <div class="section-label">Signature Collection</div>
+          <h2>Signature</h2>
           <p class="collection-intro">
-            Inspired by the silent authority of royal courts, Cour Royale captures the balance
-            of strength, grace, and mystery. These fragrances are composed for presence rather
-            than attention scents that accompany confidence rather than announce it.
+            Signature gathers Montierre fragrances designed for effortless, everyday luxury.
+            These scents are composed for quiet sophistication — present, polished, and easy
+            to wear in any setting.
           </p>
           <div class="fragrance-list">
             <article class="fragrance">
@@ -464,13 +409,12 @@
       <section id="noir-silhouette" class="section collection-detail alt">
         <div class="section-inner">
           <div class="section-ordinal">II</div>
-          <div class="section-label">Collection II</div>
-          <h2>Noir Silhouette</h2>
+          <div class="section-label">Privé Collection</div>
+          <h2>Privé</h2>
           <p class="collection-intro">
-            Noir Silhouette traces the city after dark. Glass towers, quiet corridors, the glow of
-            distant neon reflected on wet stone these fragrances frame the outline of a life lived
-            in composed shadows. Each scent is a contour rather than a spotlight, designed for
-            those who prefer definition over display.
+            Privé gathers rare and expressive compositions for the most discerning wearer. These
+            fragrances are crafted with richer materials and deeper structures, designed for
+            intimate, unforgettable impressions.
           </p>
           <div class="fragrance-list">
             <article class="fragrance">
@@ -636,13 +580,12 @@
       <section id="eternal-veil" class="section collection-detail">
         <div class="section-inner">
           <div class="section-ordinal">III</div>
-          <div class="section-label">Collection III</div>
-          <h2>Eternal Veil</h2>
+          <div class="section-label">Haute Collection</div>
+          <h2>Haute</h2>
           <p class="collection-intro">
-            Eternal Veil explores luminous softness. These fragrances sit close to the skin,
-            unfolding with patience and restraint like light filtered through sheer fabric or a
-            memory returning in fragments. Designed not to project, but to surround, they are
-            signatures meant for the wearer before anyone else.
+            Haute represents the pinnacle of Montierre perfumery. These are our most artistic,
+            avant-garde compositions — luminous, dimensional fragrances created for those who
+            want their scent to feel like a work of art.
           </p>
           <div class="fragrance-list">
             <article class="fragrance">
@@ -832,6 +775,6 @@
     <div class="background-glow"></div>
   </div>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>
